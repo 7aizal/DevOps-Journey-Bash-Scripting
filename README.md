@@ -7,14 +7,12 @@ One of the key advantages of scripting is automation. By combining different com
 For example:
 
 bash
-Copy
-Edit
+
 ./script.sh parameter1 parameter2
 You can use arithmetic in your scripts too:
 
 bash
-Copy
-Edit
+
 area=$((length * width))
 Readability & Collaboration
 I learned that comments (#) are more than just notes—they’re essential. Comments improve readability, help future readers (or yourself) understand the purpose of the script, and make debugging easier by highlighting what the script is supposed to do.
@@ -23,23 +21,20 @@ PATH Variable and Script Execution
 To run a script from anywhere, I use the $PATH environment variable:
 
 bash
-Copy
-Edit
+
 echo $PATH
 This shows all directories the shell checks for executable files. Placing a script in one of these directories lets you call it globally.
 
 To add a path:
 
 bash
-Copy
-Edit
+
 export PATH=$PATH:/your/custom/path
 Conditional Logic – If, Else, Elif
 Bash scripts can make decisions using if statements, allowing them to respond to different inputs or situations.
 
 bash
-Copy
-Edit
+
 if [ condition ]; then
   # Code block if true
 elif [ another_condition ]; then
@@ -75,8 +70,7 @@ Loops are a powerful way to automate repetition.
 While Loop:
 
 bash
-Copy
-Edit
+
 count=1
 while [ $count -le 3 ]; do
   echo "Count: $count"
@@ -85,8 +79,7 @@ done
 While Loop with Array:
 
 bash
-Copy
-Edit
+
 fruits=("apple" "banana" "orange")
 index=0
 while [ $index -lt ${#fruits[@]} ]; do
@@ -96,8 +89,7 @@ done
 For Loop:
 
 bash
-Copy
-Edit
+
 for (( i=1; i<=5; i++ )); do
   echo "Number: $i"
 done
@@ -127,8 +119,7 @@ set -o pipefail: Ensure the pipeline fails if any step fails
 Example error-handling logic:
 
 bash
-Copy
-Edit
+
 if [ ! -f "$filename" ]; then
   echo "File not found!"
   exit 1
@@ -137,8 +128,7 @@ Reading Files in a Script
 Option 1:
 
 bash
-Copy
-Edit
+
 read_file() {
   local file_path="$1"
   while IFS= read -r line; do
@@ -148,8 +138,7 @@ read_file() {
 Option 2:
 
 bash
-Copy
-Edit
+
 process_file() {
   local file_path="$1"
   cat "$file_path" | while IFS= read -r line; do
