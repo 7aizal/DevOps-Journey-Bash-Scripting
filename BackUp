@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Enter the original directory: " origin_dir
+read -p "Enter the backup directory: " backup_dir
+
+if [ ! -d "$backup_dir" ]; then
+  mkdir -p "$backup_dir"
+  echo "Backup directory created at $backup_dir"
+fi
+
+cp "$origin_dir"/*.txt "$backup_dir" 2>/dev/null
+
+echo "All .txt files from $origin_dir have been backed up to $backup_dir"
