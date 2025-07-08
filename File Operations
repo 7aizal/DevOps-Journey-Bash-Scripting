@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mkdir my_directory
+cd my_directory || exit
+echo "This is a test file." > myfile.txt
+echo "Contents of myfile.txt:"
+cat myfile.txt
